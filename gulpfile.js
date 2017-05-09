@@ -13,7 +13,7 @@ const SITE_DIR = '_site',
  */
 gulp.task('pug', function(){
     gulp.src('*.pug')
-        .pipe(pug({pretty: true}))
+        .pipe(pug({pretty: true, data: {"test":"test"}}))
         .pipe(gulp.dest(SITE_DIR))
         .pipe(browserSync.reload({stream: true}))
 })

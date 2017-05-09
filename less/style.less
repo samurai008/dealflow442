@@ -1,49 +1,255 @@
+@import "fa/less/font-awesome";
 @import "partials/const";
+@import (less) "bulma.css";
 
-html, body, navbar, header, footer{
-  margin: 0;
+@fontsize: 12px;
+@lightbackground: #f6f9fa;
+@shadowcolor: #d3d3d3;
+@colorisinfo: #3273dc;
+
+.padding-left-10px {padding-left:10px !important;}
+.bottom-margin-25px {margin-bottom: 25px;}
+.uppercase {
+  text-transform: uppercase;
+  color: @colorisinfo;
+  font-size: @fontsize;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+.icon {
+  margin-right: 5px;
+}
+.block-center {
+  margin:0 auto;
 }
 
-.padding-item{
-  padding:10px;
+.light-background{
+  background: @lightbackground;
 }
 
-.fullwidth{
-  width:100%;
+
+body {
+  background: @lightbackground;
 }
 
-.chat-title, .chat-block, .chat-editor{
-  .fullwidth;
+.card-cust-prop {
+  width:512px;
+  height: 250px !important;
 }
 
-.chat-title {
-  background: @color_blue_1;
-  color: @color_white_1;
-  padding:10px 0;
-  .text{
-    .padding-item;
-  };
-}
-
-.chat-block{
-  .chat-item{
-    .padding-item;
-  };
-  .chat-item.me{
-    background: @color_me;
-  };
-  .chat-item.opponent{
-    background: @color_opponent;
-  };
-}
-
-.chat-editor{
-  position: absolute;
-  bottom: 0;
-  div {
-    .padding-item;
+/* Navigation */
+nav {
+  background: #fff;
+  * {
+    font-size: @fontsize !important;
   }
-  textarea{
-    .fullwidth
+
+  .nav-left > .nav-item > .field > p > input[type="text"] {
+    background: @lightbackground;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 2px 1px 1px @shadowcolor;
+  }
+}
+
+/* Content */
+.content-center {
+  text-align: center;
+
+  .field > .button {
+    margin: 5px;
+    .icon {
+      margin: 0px;
+    }
+  }
+
+}
+
+.header-img {
+  .content-center;
+
+}
+
+.half-width {
+  width: 50%;
+  margin:0 auto;
+}
+
+.list-inline {
+  margin: 10px 0;
+  list-style: none;
+  li {
+    float: left;
+    font-size: @fontsize;
+    padding:0 15px;
+  }
+}
+
+/* Flexbox properties */
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+
+  .item {
+    font-size: @fontsize;
+    padding: 0 10px;
+
+    span {
+      padding: 0 5px;
+    }
+  }
+}
+
+.flexbox-with-no-margin{
+  box-shadow: 1px 2px 2px 2px @lightbackground;
+  .flexbox;
+  .item {
+    flex: 50%;
+    padding:0px;
+    .pad-elem{
+      padding:10px;
+      .h3{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      .p{
+        font-size:@fontsize;
+      }
+    }
+  }
+}
+
+.bar {
+  width:150px;
+  height:200px;
+  background: @colorisinfo;
+}
+
+.is-grey {
+  background: @shadowcolor;
+}
+
+.hr-small {
+  width: 25px;
+  border: 1px solid @shadowcolor;
+  .block-center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.light-background-container{
+  background: @lightbackground;
+  padding-top: 220px;
+  margin-top: -180px;
+  .level .level-item {
+    background: @lightbackground !important;
+  }
+}
+
+.z-index-9999 { z-index: 9999;}
+
+.section {
+  .container {
+    margin-bottom: 15px;
+
+    .subtitle {
+       font-weight: bold;
+       span {
+        font-size: 12px;
+        margin-left: 15px;
+      }
+    }
+
+  }
+}
+
+.table-properties {
+  margin: 15px 0;
+  * {
+    text-align: center;
+    font-size: @fontsize;
+    th {
+      text-align: center;
+      font-size: @fontsize;
+      color: #000 !important;
+      .uppercase;
+    }
+  }
+}
+
+.blueheader{
+  color:#3273dc;text-transform:uppercase;letter-spacing:2.5px;text-align:center;padding:15px 0;
+}
+
+.textproperties{
+  font-size: @fontsize;
+  letter-spacing: 0.5px;
+}
+
+.shadow{
+   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.cara-box {
+  padding: 250px;
+  position: relative;
+}
+
+@media (max-width:768px) {
+  .cara-box {
+    padding: 50px;
+  }
+}
+
+.circular-box {
+  border-radius: 50%;
+}
+
+.tabs {
+  * {
+    border-bottom: none !important;
+    color: #000;
+  }
+  ul {
+    li {
+      color: #000;
+      font-weight: bold;
+      font-stretch: condensed;
+    }
+  }
+}
+
+.no-padded-card  {
+  min-width:560px;
+  max-width: 560px;
+  .card-content{
+    padding: 0px;
+
+    .level {
+      align-items: flex-start;
+    }
+
+    .level-item {
+      justify-content: flex-start;
+      footer {
+        width:360px;
+        right: 0;
+          * .flexitems{
+            flex-grow: 1;
+          }
+
+      }
+    }
+    .level-item:nth-child(2) {
+      font-size: 14px !important;
+      flex-grow: 10;
+    }
+
+    .padded4px {
+      padding: 14px 6px;
+
+    }
   }
 }

@@ -1,12 +1,256 @@
 extends layouts/default
 
+block nav
+  nav.nav
+      .nav-left
+        a.nav-item
+          img(src="http://placehold.it/250x100")
+
+        .nav-item.is-hidden-mobile
+          .field
+            p.control.is-expanded.has-icons-right
+              input(class="input padding-left-10px" type="text" placeholder="Search")
+              span.icon.is-small.is-right
+                i.fa.fa-search
+
+      span.nav-toggle
+        span
+        span
+        span
+
+
+      .nav-right.nav-menu
+        a.nav-item
+          span.icon.is-small
+            i.fa.fa-users
+          | People
+
+        a.nav-item
+          span.icon.is-small
+            i.fa.fa-inbox
+          | Messages
+
+        a.nav-item
+          span.icon.is-small
+            i.fa.fa-bell-o
+          | Notification
+
+        a.nav-item
+            img(src="http://placehold.it/96x96")
+
+        a.nav-item
+          span.icon.is-small
+            i.fa.fa-gear
+
 block content
-  header.chat-title
-    span.text Chat with @erza
-  .chat-block
-    - var dummy = [{"id":1,"user":{"username":"aika"},"text":"are you ready ?","created_at":"2 mins ago"},{"id":2,"user":{"username":"rin"},"text":"okay let's get started","created_at":"a moment ago"}]
-    each n, key in dummy
-        include partials/chat-item
-  .chat-editor
-    div
-      textarea
+  section.section
+    .container.header-img
+        img(src="http://placehold.it/100x100" class="shadow")
+
+    .container.content-center
+      h1.subtitle
+        | Paypal
+        span @paypal
+
+    .container.content-center
+      p.field
+        a.button.is-info.is-outlined.is-small
+          span.icon.is-small
+            i.fa.fa-heart
+          span Like
+
+        a.button.is-info.is-outlined.is-small
+          span Follow
+
+        a.button.is-info.is-outlined.is-small
+          span Add
+          span.icon.is-small
+            i.fa.fa-angle-down
+
+    .container.content-center
+      p.half-width
+        span.is-small Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium porta dui in commodo. Integer ut arcu quis ante sagittis blandit nec vel tortor.
+
+      .flexbox
+        .item
+          span.icon.is-small
+            i.fa.fa-map-marker
+          | California
+        .item
+          span.icon.is-small
+            i.fa.fa-link
+          | www.netflix.com
+
+    hr.hr-small
+
+    -var dollar = "$"
+
+    .container
+      .level.uppercase.is-block-mobile
+        .level-item.has-centered-text
+          div
+            p.bottom-margin-25px
+              span.icon.is-small
+                i.fa.fa-clipboard
+              | traction
+            p.title.content-center
+              | +50M
+        .level-item.has-centered-text
+          div
+            p.bottom-margin-25px
+              span.icon.is-small
+                i.fa.fa-star
+              | funding
+            p.title.content-center
+              | 999
+        .level-item.has-centered-text
+          div
+            p.bottom-margin-25px
+              span.icon.is-small
+                i.fa.fa-pie-chart
+              | market size
+            p.title.content-center
+              | 999
+
+  section.section
+    div(class="container z-index-9999")
+     .flexbox-with-no-margin
+      .item
+        img(src="http://placehold.it/640x360")
+      div(class="item" style="background:#fff")
+        .pad-elem
+          h3 Lorem ipsum
+          p
+          |  Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+  div(class="container light-background-container" style="position:relative;border-bottom:5px solid #d3d3d3;")
+    nav(class="level is-hidden-mobile" style="margin-bottom:0;")
+      .level-item.has-text-centered
+        .bar
+      .level-item.has-text-centered
+        .bar.is-grey
+      .level-item.has-text-centered
+        .bar.is-grey
+      .level-item.has-text-centered
+        .bar.is-grey
+
+    div(class="shadow" style="position:absolute;top:200px;left:1em;padding:5px;padding-right:25px;background:#fff;")
+      h2.title US
+      h2.subtitle $23M
+
+  div(class="container" style="background:white;")
+    h3(class="blueheader" style="padding-top:2em;")
+      span.icon
+        i.fa.fa-bar-chart
+      | statistics
+
+    table.table.table-properties
+      thead
+        tr
+            th date
+            th funding rounds
+            th function amount
+            th valuation
+            th share price
+
+      tbody
+        tr
+          td Dec 2011
+          td Debt Financing
+          td $200M
+          td $8.5B
+          td $2309 Per Share
+        tr
+          td Dec 2011
+          td Debt Financing
+          td $200M
+          td $8.5B
+          td $2309 Per Share
+        tr
+          td Dec 2011
+          td Debt Financing
+          td $200M
+          td $8.5B
+          td $2309 Per Share
+    hr.hr-small
+    h3.blueheader
+      span.icon
+        i.fa.fa-users
+      |team members
+
+    .tabs.is-centered
+      ul
+        li.is-active
+          a
+            span Key Members
+        li
+          a
+            span Investors
+        li
+          a
+            span Investors
+
+    .cara-box
+      div(class="columns is-flex" style="align-items:center;")
+        .column.is-one-quarter.content-center
+          img(src="http://placehold.it/150x150" class="circular-box")
+        .column.is-three-quarters
+          p.textproperties
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis.
+
+  section.section.light-background
+    .container
+      .columns
+        .column.is-three-quarters.is-full-mobile.is-block
+          .card.no-padded-card
+
+            .card-content
+              .content
+                nav(class="level is-mobile" style="position:relative;")
+                  .level-item
+                    img(src="http://placehold.it/200x250")
+                  div(class="level-item padded4px" style="width:360px")
+                    div(style="width:360px;")
+                      h5.title
+                        b Lorem Ipsum
+                        span(class="icon" style="float:right")
+                          a
+                            i.fa.fa-ellipsis-v
+                      p(style="margin-top: 10px;")
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      footer(style="position:absolute;bottom:0;padding:5px;")
+                        .is-flex
+                          div(style="flex-grow:1")
+                            a www.abcd.com
+                          div(style="flex-grow:1;text-align:right")
+                            a
+                              span.icon
+                                i.fa.fa-share-alt
+
+        .column.is-full-mobile.is-block
+          h3(style="padding:10px 0px;") Recommended for you
+          div(class="card is-mobile" style="max-width:250px;min-width:250px;font-size:12px;text-align:center;")
+            .card-image
+              figure.image.is-4by3
+                img(src="http://placehold.it/400x300")
+
+            .card-content
+              div(class="media-content" style="text-align:center;font-size:12px;")
+                p
+                  b Title
+                p
+                  b Subtitle
+
+              .content
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                p(class="field" style="margin-top:5px;")
+                  a.button.is-info.is-outlined.is-small
+                    span Follow
+
+block footer
+  footer.footer
+    .container
+      .content.has-text-centered
+        p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
